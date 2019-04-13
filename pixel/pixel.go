@@ -1,4 +1,4 @@
-package lines
+package pixel
 
 import "github.com/go-gl/gl/all-core/gl"
 
