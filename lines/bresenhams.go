@@ -33,7 +33,12 @@ func drawHorizontalLine(start pixel.Point, end pixel.Point) {
 }
 
 func drawVerticalLine(start pixel.Point, end pixel.Point) {
+	currentPixel := start
 
+	for currentPixel.Y != end.Y {
+		pixel.DrawPixel(currentPixel)
+		currentPixel.Y++
+	}
 }
 
 func drawWithAlgorithm(start pixel.Point, end pixel.Point) {
