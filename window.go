@@ -39,6 +39,6 @@ func setWindowHints() {
 	glfw.WindowHint(glfw.ContextVersionMajor, 2)
 	glfw.WindowHint(glfw.ContextVersionMinor, 1)
 	glfw.WindowHint(glfw.Resizable, glfw.True)
-	//glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)
-	//glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
+	//glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)   Only works on <= OpenGL 3.2
+	//glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)      Only works on <= OpenGL 3.0
 }

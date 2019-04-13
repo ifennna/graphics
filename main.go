@@ -27,9 +27,6 @@ func draw(window *glfw.Window, program uint32) {
 	gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 	gl.UseProgram(program)
 
-	//gl.LoadIdentity()
-	//gl.Ortho(0, 0, 0, 0, 0, 0)
-
 	lines.DrawPixel(0, 0)
 
 	window.SwapBuffers() // swap rendering and drawing buffers
