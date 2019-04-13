@@ -3,24 +3,17 @@ package lines
 import "go-graphics/pixel"
 
 func Draw(start pixel.Point, end pixel.Point) {
-	slope := calculateSlope(start, end)
-
-	switch slope {
-	case 0:
-		drawHorizontalLine(start, end)
-	default:
-		drawWithAlgorithm(start, end)
-	}
-
-	pixel.DrawPixel(start)
-	pixel.DrawPixel(end)
-}
-
-func calculateSlope(start pixel.Point, end pixel.Point) float32 {
 	differenceInY := end.Y - start.Y
 	differenceInX := end.X - start.X
 
-	return differenceInY / differenceInX
+	if differenceInY == 0 {
+		drawHorizontalLine(start, end)
+	} else if differenceInX == 0 {
+		drawVerticalLine(start, end)
+	} else {
+		slope := differenceInY / differenceInX
+		drawWithAlgorithm(start, end, slope)
+	}
 }
 
 func drawHorizontalLine(start pixel.Point, end pixel.Point) {
@@ -41,6 +34,6 @@ func drawVerticalLine(start pixel.Point, end pixel.Point) {
 	}
 }
 
-func drawWithAlgorithm(start pixel.Point, end pixel.Point) {
+func drawWithAlgorithm(start pixel.Point, end pixel.Point, slope float32) {
 
 }
