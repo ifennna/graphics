@@ -2,9 +2,14 @@ package lines
 
 import "go-graphics/pixel"
 
-func Draw(start pixel.Point, end pixel.Point) {
-	differenceInY := end.Y - start.Y
-	differenceInX := end.X - start.X
+type Line struct {
+	start pixel.Point
+	end   pixel.Point
+	slope float32
+}
+
+func Draw(start pixel.Point, end pixel.Point, algorithm string) {
+	differenceInY, differenceInX := getXAndYDifferences(start, end)
 
 	if differenceInY == 0 {
 		drawHorizontalLine(start, end)
@@ -12,8 +17,16 @@ func Draw(start pixel.Point, end pixel.Point) {
 		drawVerticalLine(start, end)
 	} else {
 		slope := differenceInY / differenceInX
-		drawWithAlgorithm(start, end, slope)
+		line := Line{start: start, end: end, slope: slope}
+
+		drawWithAlgorithm(algorithm, line)
 	}
+}
+
+func getXAndYDifferences(start pixel.Point, end pixel.Point) (float32, float32) {
+	differenceInY := end.Y - start.Y
+	differenceInX := end.X - start.X
+	return differenceInY, differenceInX
 }
 
 func drawHorizontalLine(start pixel.Point, end pixel.Point) {
@@ -34,6 +47,9 @@ func drawVerticalLine(start pixel.Point, end pixel.Point) {
 	}
 }
 
-func drawWithAlgorithm(start pixel.Point, end pixel.Point, slope float32) {
-
+func drawWithAlgorithm(algorithm string, line Line) {
+	switch algorithm {
+	case "bresenhams":
+		drawBresenhams(line)
+	}
 }
