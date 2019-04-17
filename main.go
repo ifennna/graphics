@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/go-gl/gl/all-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
+	"go-graphics/circles"
 	"go-graphics/lines"
 	"go-graphics/pixel"
 	"runtime"
@@ -35,7 +36,13 @@ func draw(window *glfw.Window, program uint32) {
 
 func run() {
 	start := pixel.Point{0, 0}
-	end := pixel.Point{19, 9}
+	end1 := pixel.Point{19, 9}
+	end2 := pixel.Point{9, 19}
 
-	lines.Draw(start, end, "dda")
+	lines.Draw(start, end1, "dda")
+	lines.Draw(start, end2, "bresenhams")
+
+	circle := pixel.Point{0, 19}
+
+	circles.Draw(circle, "bresenhams")
 }
