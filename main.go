@@ -35,8 +35,8 @@ func draw(window *glfw.Window, program uint32) {
 }
 
 func run() {
-	start := pixel.Point{-10, 100}
-	end := pixel.Point{9, 0}
+	start := pixel.Point{0, 0}
+	end := pixel.Point{9, 9}
 
 	lines.Draw(start, end, "bresenhams")
 }

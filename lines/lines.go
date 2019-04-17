@@ -5,7 +5,7 @@ import "go-graphics/pixel"
 type Line struct {
 	start pixel.Point
 	end   pixel.Point
-	slope float32
+	slope float64
 }
 
 func Draw(start pixel.Point, end pixel.Point, algorithm string) {
@@ -23,7 +23,7 @@ func Draw(start pixel.Point, end pixel.Point, algorithm string) {
 	}
 }
 
-func getXAndYDifferences(start pixel.Point, end pixel.Point) (float32, float32) {
+func getXAndYDifferences(start pixel.Point, end pixel.Point) (float64, float64) {
 	differenceInY := end.Y - start.Y
 	differenceInX := end.X - start.X
 	return differenceInY, differenceInX

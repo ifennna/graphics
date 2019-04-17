@@ -5,8 +5,8 @@ import (
 )
 
 type Point struct {
-	X float32
-	Y float32
+	X float64
+	Y float64
 }
 
 func DrawPixel(point Point) {
@@ -16,6 +16,6 @@ func DrawPixel(point Point) {
 	gl.PointSize(5)
 	gl.Begin(gl.POINTS)
 	gl.Color3f(1.0, .5, 1.0)
-	gl.Vertex2f(x, y)
+	gl.Vertex2d(x, y)
 	gl.End()
 }
