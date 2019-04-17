@@ -21,7 +21,6 @@ func main() {
 	for !window.ShouldClose() {
 		draw(window, program)
 	}
-
 }
 
 func draw(window *glfw.Window, program uint32) {
@@ -36,7 +35,7 @@ func draw(window *glfw.Window, program uint32) {
 
 func run() {
 	start := pixel.Point{0, 0}
-	end := pixel.Point{9, 9}
+	end := pixel.Point{19, 9}
 
-	lines.Draw(start, end, "bresenhams")
+	lines.Draw(start, end, "dda")
 }

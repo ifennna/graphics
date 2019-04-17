@@ -1,96 +1,50 @@
 package lines
 
-import (
-	"go-graphics/pixel"
-)
+import "go-graphics/pixel"
 
 func drawBresenhams(line Line) {
-	if line.slope > 0 {
-		if line.slope < 1 {
-			differenceInY, differenceInX := getXAndYDifferences(line.start, line.end)
-			decisionVariable := 2*differenceInY - differenceInX
+	differenceInY, differenceInX := getXAndYDifferences(line.start, line.end)
+	decisionVariable := 2*differenceInY - differenceInX
 
-			currentPixel := line.start
+	currentPixel := line.start
 
-			pixel.DrawPixel(currentPixel)
+	pixel.DrawPixel(currentPixel)
 
-			for currentPixel.X != line.end.X {
-				currentPixel.X++
+	for currentPixel.X != line.end.X {
+		currentPixel.X++
 
-				if decisionVariable < 0 {
-					decisionVariable += 2 * differenceInY
-				} else {
-					currentPixel.Y++
-					decisionVariable += 2 * (differenceInY - differenceInX)
-				}
-
-				pixel.DrawPixel(currentPixel)
-			}
+		if decisionVariable < 0 {
+			decisionVariable += 2 * differenceInY
 		} else {
-			differenceInY, differenceInX := getXAndYDifferences(line.start, line.end)
-			decisionVariable := 2*differenceInY - differenceInX
-
-			currentPixel := pixel.Point{X: line.start.Y, Y: line.start.X}
-			endPixel := pixel.Point{X: line.end.Y, Y: line.end.X}
-
-			pixel.DrawPixel(currentPixel)
-
-			for currentPixel.X != endPixel.X {
-				currentPixel.X++
-
-				if decisionVariable < 0 {
-					decisionVariable += 2 * differenceInY
-				} else {
-					currentPixel.Y++
-					decisionVariable += 2 * (differenceInY - differenceInX)
-				}
-
-				pixel.DrawPixel(currentPixel)
-			}
+			currentPixel.Y++
+			decisionVariable += 2 * (differenceInY - differenceInX)
 		}
-	} else {
-		if line.slope > -1 {
-			differenceInY, differenceInX := getXAndYDifferences(line.start, line.end)
-			decisionVariable := 2*differenceInY - differenceInX
 
-			currentPixel := pixel.Point{X: -line.start.X, Y: line.start.Y}
-			endPixel := pixel.Point{X: -line.end.X, Y: line.end.Y}
-
-			pixel.DrawPixel(currentPixel)
-
-			for currentPixel.X != endPixel.X {
-				currentPixel.X++
-
-				if decisionVariable < 0 {
-					decisionVariable += 2 * differenceInY
-				} else {
-					currentPixel.Y++
-					decisionVariable += 2 * (differenceInY - differenceInX)
-				}
-
-				pixel.DrawPixel(currentPixel)
-			}
-		} else {
-			differenceInY, differenceInX := getXAndYDifferences(line.start, line.end)
-			decisionVariable := 2*differenceInY - differenceInX
-
-			currentPixel := pixel.Point{X: -line.start.Y, Y: line.start.X}
-			endPixel := pixel.Point{X: -line.end.Y, Y: line.end.X}
-
-			pixel.DrawPixel(currentPixel)
-
-			for currentPixel.X != endPixel.X {
-				currentPixel.X++
-
-				if decisionVariable < 0 {
-					decisionVariable += 2 * differenceInY
-				} else {
-					currentPixel.Y++
-					decisionVariable += 2 * (differenceInY - differenceInX)
-				}
-
-				pixel.DrawPixel(currentPixel)
-			}
-		}
+		pixel.DrawPixel(currentPixel)
 	}
 }
+
+//func setPixelForLine(line Line, point pixel.Point) {
+//	x := point.X
+//	y := point.Y
+//
+//	if line.slope < 0 {
+//		if line.slope > 1 {
+//			pixel.DrawPixel(point)
+//		} else {
+//			newPoint := pixel.Point{X: x, Y: -y}
+//			pixel.DrawPixel(newPoint)
+//		}
+//	} else {
+//
+//	} else if line.slope > 1 {
+//		newPoint := pixel.Point{X: y, Y: x}
+//		pixel.DrawPixel(newPoint)
+//	} else if line.slope < 0 {
+//		newPoint := pixel.Point{X: y, Y: x}
+//		pixel.DrawPixel(newPoint)
+//	} else if line.slope < -1 {
+//		newPoint := pixel.Point{X: -x, Y: y}
+//		pixel.DrawPixel(newPoint)
+//	}
+//}

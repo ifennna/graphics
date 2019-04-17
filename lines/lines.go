@@ -51,5 +51,7 @@ func drawWithAlgorithm(algorithm string, line Line) {
 	switch algorithm {
 	case "bresenhams":
 		drawBresenhams(line)
+	case "dda":
+		drawDDA(line)
 	}
 }
