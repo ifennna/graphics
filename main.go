@@ -42,7 +42,9 @@ func run() {
 	lines.Draw(start, end1, "dda")
 	lines.Draw(start, end2, "bresenhams")
 
-	circle := pixel.Point{0, 19}
+	circle1 := pixel.Point{0, 19}
+	circle2 := pixel.Point{0, 29}
 
-	circles.Draw(circle, "bresenhams")
+	circles.Draw(circle1, "midpoint")
+	circles.Draw(circle2, "bresenhams")
 }

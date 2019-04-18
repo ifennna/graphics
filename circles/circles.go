@@ -6,6 +6,8 @@ func Draw(start pixel.Point, algorithm string) {
 	switch algorithm {
 	case "bresenhams":
 		drawBresenhams(start)
+	case "midpoint":
+		drawMidpoint(start)
 	}
 }
 
