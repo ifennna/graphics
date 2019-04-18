@@ -4,6 +4,7 @@ import (
 	"github.com/go-gl/gl/all-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"go-graphics/circles"
+	"go-graphics/ellipses"
 	"go-graphics/lines"
 	"go-graphics/pixel"
 	"runtime"
@@ -47,4 +48,7 @@ func run() {
 
 	circles.Draw(circle1, "midpoint")
 	circles.Draw(circle2, "bresenhams")
+
+	ellipse := pixel.Point{0, 15}
+	ellipses.Draw(ellipse, 31)
 }
