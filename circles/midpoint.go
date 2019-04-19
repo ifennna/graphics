@@ -2,14 +2,13 @@ package circles
 
 import "go-graphics/pixel"
 
-func drawMidpoint(start pixel.Point) {
-	radius := start.Y - start.X
+func drawMidpoint(midpoint pixel.Point, radius float64) {
 	decisionVariable := 1 - radius
 
-	current := start
+	current := pixel.Point{X: 0, Y: radius}
 
 	for current.X <= current.Y {
-		drawMirroredPixels(current)
+		drawMirroredPixels(midpoint, current)
 
 		if decisionVariable < 0 {
 			decisionVariable += (2 * current.X) + 3

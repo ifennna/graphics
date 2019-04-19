@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/go-gl/gl/all-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
+	"go-graphics/arcs"
 	"go-graphics/circles"
 	"go-graphics/ellipses"
 	"go-graphics/lines"
@@ -43,12 +44,14 @@ func run() {
 	lines.Draw(start, end1, "dda")
 	lines.Draw(start, end2, "bresenhams")
 
-	circle1 := pixel.Point{0, 19}
-	circle2 := pixel.Point{0, 29}
-
-	circles.Draw(circle1, "midpoint")
-	circles.Draw(circle2, "bresenhams")
+	circles.Draw(pixel.Point{0, 0}, 19, "midpoint")
+	circles.Draw(pixel.Point{0, 0}, 29, "bresenhams")
 
 	ellipse := pixel.Point{0, 15}
 	ellipses.Draw(ellipse, 31)
+
+	arcStart := pixel.Point{0, 50}
+	arcEnd := pixel.Point{50, 20}
+
+	arcs.Draw(arcStart, arcEnd)
 }
