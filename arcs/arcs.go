@@ -1,23 +1,17 @@
 package arcs
 
-import "go-graphics/pixel"
+import (
+	"go-graphics/pixel"
+	"math"
+)
 
 func Draw(start pixel.Point, end pixel.Point) {
-	radius := start.Y - start.X
-	decisionVariable := 3 - 2*radius
+	radius := end.Y - start.Y
+	currentPixel := start
 
-	current := start
-
-	for current.X <= current.Y {
-		pixel.DrawPixel(current)
-
-		if decisionVariable < 0 {
-			decisionVariable += (4 * current.X) + 6
-		} else {
-			decisionVariable += 4*(current.X-current.Y) + 10
-			current.Y--
-		}
-
-		current.X++
+	for currentPixel.Y >= end.Y {
+		currentPixel.Y = math.Sqrt(radius*radius - currentPixel.X*currentPixel.X)
+		pixel.DrawPixel(currentPixel)
+		currentPixel.X++
 	}
 }

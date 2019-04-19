@@ -50,7 +50,7 @@ func run() {
 	ellipse := pixel.Point{0, 15}
 	ellipses.Draw(ellipse, 31)
 
-	arcStart := pixel.Point{0, 50}
+	arcStart := pixel.Point{0, 70}
 	arcEnd := pixel.Point{50, 20}
 
 	arcs.Draw(arcStart, arcEnd)
