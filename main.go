@@ -47,8 +47,8 @@ func run() {
 	circles.Draw(pixel.Point{0, 0}, 19, "midpoint")
 	circles.Draw(pixel.Point{0, 0}, 29, "bresenhams")
 
-	ellipse := pixel.Point{0, 15}
-	ellipses.Draw(ellipse, 31)
+	ellipse := pixel.Point{0, 0}
+	ellipses.Draw(ellipse, 31, 15)
 
 	arcStart := pixel.Point{0, 70}
 	arcEnd := pixel.Point{50, 20}
