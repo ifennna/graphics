@@ -4,7 +4,6 @@ import (
 	"github.com/go-gl/gl/all-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"go-graphics/arcs"
-	"go-graphics/circles"
 	"go-graphics/ellipses"
 	"go-graphics/lines"
 	"go-graphics/pixel"
@@ -37,21 +36,30 @@ func draw(window *glfw.Window, program uint32) {
 }
 
 func run() {
-	start := pixel.Point{0, 0}
-	end1 := pixel.Point{19, 9}
-	end2 := pixel.Point{9, 19}
+	//start := pixel.Point{0, 0}
+	//end1 := pixel.Point{19, 9}
+	//end2 := pixel.Point{9, 19}
+	//
+	//lines.Draw(start, end1, "dda")
+	//lines.Draw(start, end2, "bresenhams")
+	//
+	//circles.Draw(pixel.Point{0, 0}, 19, "midpoint")
+	//circles.Draw(pixel.Point{0, 0}, 29, "bresenhams")
+	//
+	//ellipse := pixel.Point{0, 0}
+	//ellipses.Draw(ellipse, 31, 15)
+	//
+	//arcStart := pixel.Point{0, 70}
+	//arcEnd := pixel.Point{50, 20}
+	//
+	//arcs.Draw(arcStart, arcEnd)
 
-	lines.Draw(start, end1, "dda")
-	lines.Draw(start, end2, "bresenhams")
+	lines.Draw(pixel.Point{X: 0, Y: 20}, pixel.Point{X: 50, Y: 20}, "bresenhams")
+	lines.Draw(pixel.Point{X: 0, Y: 0}, pixel.Point{X: 50, Y: 0}, "dda")
 
-	circles.Draw(pixel.Point{0, 0}, 19, "midpoint")
-	circles.Draw(pixel.Point{0, 0}, 29, "bresenhams")
+	ellipses.Draw(pixel.Point{X: 0, Y: 10}, 3, 10)
+	ellipses.Draw(pixel.Point{X: 50, Y: 10}, 3, 10)
 
-	ellipse := pixel.Point{0, 0}
-	ellipses.Draw(ellipse, 31, 15)
-
-	arcStart := pixel.Point{0, 70}
-	arcEnd := pixel.Point{50, 20}
-
-	arcs.Draw(arcStart, arcEnd)
+	arcs.Draw(pixel.Point{X: 0, Y: 20}, pixel.Point{X: 50, Y: 20})
+	arcs.Draw(pixel.Point{X: 0, Y: 0}, pixel.Point{X: 50, Y: 01})
 }
