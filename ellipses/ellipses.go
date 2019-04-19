@@ -48,13 +48,10 @@ func Draw(midpoint pixel.Point, horizontalDistance float64, verticalDistance flo
 }
 
 func drawMirroredPixels(midpoint pixel.Point, point pixel.Point) {
-	x := midpoint.X + point.X
-	y := midpoint.Y + point.Y
-
-	sectorOne := pixel.Point{X: x, Y: y}
-	sectorTwo := pixel.Point{X: -x, Y: y}
-	sectorThree := pixel.Point{X: -x, Y: -y}
-	sectorFour := pixel.Point{X: x, Y: -y}
+	sectorOne := pixel.Point{X: point.X + midpoint.X, Y: point.Y + midpoint.Y}
+	sectorTwo := pixel.Point{X: -point.X + midpoint.X, Y: point.Y + midpoint.Y}
+	sectorThree := pixel.Point{X: -point.X + midpoint.X, Y: -point.Y + midpoint.Y}
+	sectorFour := pixel.Point{X: point.X + midpoint.X, Y: -point.Y + midpoint.Y}
 
 	pixel.DrawPixel(sectorOne)
 	pixel.DrawPixel(sectorTwo)

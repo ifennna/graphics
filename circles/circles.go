@@ -12,17 +12,14 @@ func Draw(midpoint pixel.Point, radius float64, algorithm string) {
 }
 
 func drawMirroredPixels(midpoint pixel.Point, point pixel.Point) {
-	x := midpoint.X + point.X
-	y := midpoint.Y + point.Y
-
-	sectorOne := pixel.Point{X: x, Y: y}
-	sectorTwo := pixel.Point{X: y, Y: x}
-	sectorThree := pixel.Point{X: -x, Y: y}
-	sectorFour := pixel.Point{X: -y, Y: x}
-	sectorFive := pixel.Point{X: -x, Y: -y}
-	sectorSix := pixel.Point{X: -y, Y: -x}
-	sectorSeven := pixel.Point{X: x, Y: -y}
-	sectorEight := pixel.Point{X: y, Y: -x}
+	sectorOne := pixel.Point{X: point.X + midpoint.X, Y: point.Y + midpoint.Y}
+	sectorTwo := pixel.Point{X: point.Y + midpoint.Y, Y: point.X + midpoint.X}
+	sectorThree := pixel.Point{X: -point.X + midpoint.X, Y: point.Y + midpoint.Y}
+	sectorFour := pixel.Point{X: -point.Y + midpoint.Y, Y: point.X + midpoint.X}
+	sectorFive := pixel.Point{X: -point.X + midpoint.X, Y: -point.Y + midpoint.Y}
+	sectorSix := pixel.Point{X: -point.Y + midpoint.Y, Y: -point.X + midpoint.X}
+	sectorSeven := pixel.Point{X: point.X + midpoint.X, Y: -point.Y + midpoint.Y}
+	sectorEight := pixel.Point{X: point.Y + midpoint.Y, Y: -point.X + midpoint.X}
 
 	pixel.DrawPixel(sectorOne)
 	pixel.DrawPixel(sectorTwo)
