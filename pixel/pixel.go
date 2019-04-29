@@ -13,7 +13,7 @@ func DrawPixel(point Point) {
 	x := point.X / 100
 	y := point.Y / 100
 
-	gl.PointSize(5)
+	gl.PointSize(4)
 	gl.Begin(gl.POINTS)
 	gl.Color3f(1.0, .5, 1.0)
 	gl.Vertex2d(x, y)
