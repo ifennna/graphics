@@ -36,23 +36,8 @@ func draw(window *glfw.Window, program uint32) {
 }
 
 func run() {
-	//start := pixel.Point{0, 0}
-	//end1 := pixel.Point{19, 9}
-	//end2 := pixel.Point{9, 19}
-	//
-	//lines.Draw(start, end1, "dda")
-	//lines.Draw(start, end2, "bresenhams")
-	//
 	//circles.Draw(pixel.Point{0, 0}, 19, "midpoint")
-	//circles.Draw(pixel.Point{0, 0}, 29, "bresenhams")
-	//
-	//ellipse := pixel.Point{0, 0}
-	//ellipses.Draw(ellipse, 31, 15)
-	//
-	//arcStart := pixel.Point{0, 70}
-	//arcEnd := pixel.Point{50, 20}
-	//
-	//arcs.Draw(arcStart, arcEnd)
+	//circles.Draw(pixel.Point{10, 0}, 29, "bresenhams")
 
 	lines.Draw(pixel.Point{X: 0, Y: 20}, pixel.Point{X: 50, Y: 20}, "bresenhams")
 	lines.Draw(pixel.Point{X: 0, Y: 0}, pixel.Point{X: 50, Y: 0}, "dda")
@@ -60,6 +45,6 @@ func run() {
 	ellipses.Draw(pixel.Point{X: 0, Y: 10}, 3, 10)
 	ellipses.Draw(pixel.Point{X: 50, Y: 10}, 3, 10)
 
-	arcs.Draw(pixel.Point{X: 0, Y: 20}, pixel.Point{X: 50, Y: 20})
-	arcs.Draw(pixel.Point{X: 0, Y: 0}, pixel.Point{X: 50, Y: 01})
+	arcs.Draw(pixel.Point{X: 25, Y: 45}, 35, true)
+	arcs.Draw(pixel.Point{X: 25, Y: -25}, 35, false)
 }
