@@ -1,6 +1,6 @@
 package lines
 
-import "go-graphics/pixel"
+import "graphics/pixel"
 
 type Line struct {
 	start pixel.Point

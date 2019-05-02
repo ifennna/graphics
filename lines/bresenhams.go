@@ -1,6 +1,6 @@
 package lines
 
-import "go-graphics/pixel"
+import "graphics/pixel"
 
 func drawBresenhams(line Line) {
 	differenceInY, differenceInX := getXAndYDifferences(line.start, line.end)

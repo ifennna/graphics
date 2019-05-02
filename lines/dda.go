@@ -1,7 +1,7 @@
 package lines
 
 import (
-	"go-graphics/pixel"
+	"graphics/pixel"
 	"math"
 )
 

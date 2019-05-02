@@ -1,6 +1,6 @@
 package circles
 
-import "go-graphics/pixel"
+import "graphics/pixel"
 
 func Draw(midpoint pixel.Point, radius float64, algorithm string) {
 	switch algorithm {

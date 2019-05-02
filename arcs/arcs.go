@@ -1,7 +1,7 @@
 package arcs
 
 import (
-	"go-graphics/pixel"
+	"graphics/pixel"
 )
 
 func Draw(midpoint pixel.Point, radius float64, upper bool) {

@@ -1,6 +1,6 @@
 package ellipses
 
-import "go-graphics/pixel"
+import "graphics/pixel"
 
 func Draw(midpoint pixel.Point, horizontalDistance float64, verticalDistance float64) {
 	var derivativeOfX float64 = 0

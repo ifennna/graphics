@@ -1,6 +1,6 @@
 package circles
 
-import "go-graphics/pixel"
+import "graphics/pixel"
 
 func drawMidpoint(midpoint pixel.Point, radius float64) {
 	decisionVariable := 1 - radius
